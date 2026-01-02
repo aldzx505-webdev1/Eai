@@ -1,6 +1,6 @@
 export const config = { runtime: "edge" };
 
-const Apikey = "sk-b5f2f839d17d4f3686416898b0e4bbc9";
+const ApiKey = "sk-b5f2f839d17d4f3686416898b0e4bbc9";
 export default async function handler(req) {
   if (req.method !== "POST") {
     return new Response("Method Not Allowed", { status: 405 });
