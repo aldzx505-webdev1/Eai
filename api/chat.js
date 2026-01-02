@@ -1,6 +1,7 @@
 export const config = { runtime: "edge" };
 
-const Apikey = "sk-b5f2f839d17d4f3686416898b0e4bbc9";
+const API_KEY = "sk-b5f2f839d17d4f3686416898b0e4bbc9"; // FIX: ganti jadi API_KEY
+
 export default async function handler(req) {
   if (req.method !== "POST") {
     return new Response("Method Not Allowed", { status: 405 });
@@ -11,7 +12,7 @@ export default async function handler(req) {
   const res = await fetch("https://api.deepseek.com/v1/chat/completions", {
     method: "POST",
     headers: {
-      "Authorization": `Bearer ${ApiKey}`,
+      "Authorization": `Bearer ${API_KEY}`, // FIX: pake API_KEY bukan ApiKey
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
